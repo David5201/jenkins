@@ -528,7 +528,13 @@ public class FunctionsTest {
     private static void assertPrintThrowable(Throwable t, String traditional, String custom) {
         StringWriter sw = new StringWriter();
         t.printStackTrace(new PrintWriter(sw));
-        assertEquals(sw.toString().replace(IOUtils.LINE_SEPARATOR, "\n"), traditional);
+        
+        String result = sw.toString().replace(IOUtils.LINE_SEPARATOR, "\n");
+        
+        System.out.println("result:"+result);
+        System.out.println("traditional:"+traditional);
+        
+        assertEquals(result, traditional);
         String actual = Functions.printThrowable(t);
         System.out.println(actual);
         assertEquals(actual.replace(IOUtils.LINE_SEPARATOR, "\n"), custom);
