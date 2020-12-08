@@ -518,7 +518,7 @@ public class FunctionsTest {
             "\tat p.C.method1(C.java:17)\n" +
             "Caused by: p.Exc2\n" +
             "\tat p.C.method2(C.java:27)\n" +
-            "\t[CIRCULAR REFERENCE:p.Exc1]\n",
+            "Caused by: [CIRCULAR REFERENCE: p.Exc1]\n",
             "<cycle to p.Exc1>\n" +
             "Caused: p.Exc2\n" +
             "\tat p.C.method2(C.java:27)\n" +
